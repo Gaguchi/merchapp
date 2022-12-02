@@ -1,0 +1,47 @@
+{% extends "cards/layout.html" %}
+
+{% block body %}
+
+<h1>Auchan SPB</h1>
+<!--[if lt IE 7]>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<section>
+    <div class="container sticky-top" style="pointer-events: none; background-color: #ffffff00; z-index: 10;">
+      <div class="row" style="padding-top: 5px; padding-bottom: 5px;"><img src="../../assets/site_assets/kul_logo.png" alt="" style="max-width: 110px; padding: 12px; max-height: 50px;"><span id="code" style="color:#5cba2c">[7000059242]</span></div>
+    </div>
+    <!--<div class="container sticky-top" style="pointer-events: none; background-color: #ffffff;">
+      <img src="../../assets/site_assets/ph_logo.png" alt="" style="max-width: 200px; padding: 19px;">
+    </div>-->
+    <div class="album py-5 bg-light">
+      <div class="container">
+        <div class="row">
+            {% for name in names %}
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                  <div class="card-header">
+                    <div class="row">
+                      <div class="col-3"><img src="../../assets/site_assets/logo_ice.png" alt="" style="width: 100%;"></div>
+                      <div class="col-9" id="header-text" >"{{name.product.brand.name}}"<br>{{name.product.name}}
+                  </div>
+                </div></div>
+                  <img class="card-img-top" data-src="volo_bochok_choc_1000.png" alt="Thumbnail [100%x225]"
+                    style="object-fit: contain; width: auto; height: 166px; display: block; padding:20px;" src="{{name.product.image}}"
+                    data-holder-rendered="true">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">PLU: {{name.plu}}<span id="big">
+                    </span></li>
+                    <li class="list-group-item">В КОРОБКЕ: <span id="big">8</span></li>
+                    <img class="card-img-bottom" data-src="4607067932921.png" alt="Thumbnail [100%x225]"
+                      style="width: 100%; display: block; padding:20px;" src="{{name.product.barcode}}"
+                      data-holder-rendered="true">
+                  </ul>
+                </div>
+              </div>
+              {% endfor %}
+              {% endblock body %}
+        </div>
+      </div>
+    </div>
+  </section>
