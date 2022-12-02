@@ -17,7 +17,7 @@
     <div class="album py-5 bg-light">
       <div class="container">
         <div class="row">
-            {% for name in names %}
+            {% for name in names|dictsort:"priority"  %}
             <div class="col-md-4">
                 <div class="card mb-4 shadow-sm">
                   <div class="card-header">
@@ -32,7 +32,7 @@
                   <ul class="list-group list-group-flush">
                     <li class="list-group-item">PLU: {{name.plu}}<span id="big">
                     </span></li>
-                    <li class="list-group-item">В КОРОБКЕ: <span id="big">8</span></li>
+                    <li class="list-group-item">В КОРОБКЕ: <span id="big">{{name.product.box}}</span></li>
                     <img class="card-img-bottom" data-src="4607067932921.png" alt="Thumbnail [100%x225]"
                       style="width: 100%; display: block; padding:20px;" src="{{name.product.barcode}}"
                       data-holder-rendered="true">

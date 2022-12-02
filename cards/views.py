@@ -16,7 +16,7 @@ def perekspb(request):
 
 def peterechkaspb(request):
     return render(request, "cards/peterechka_spb.html", {
-        "names": pyaterechka_spb.objects.all()
+        "names": peterechka_spb.objects.all()
     })
 
 def brizspb(request):
