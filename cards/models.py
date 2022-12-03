@@ -7,7 +7,7 @@ class shops_SPB(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=64)
     image = models.ImageField(upload_to='shop_images')
-    url = models.URLField()
+    url = models.CharField(max_length=64)
 
     def __str__(self):
         return f"{self.name}"
@@ -16,7 +16,7 @@ class supermarkets_SPB(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=64)
     image = models.ImageField(upload_to='shop_images')
-    url = models.URLField()
+    url = models.CharField(max_length=64)
 
     def __str__(self):
         return f"{self.name}"
@@ -51,25 +51,46 @@ class perek_spb(models.Model):
     id = models.AutoField(primary_key=True)
     product = models.ForeignKey(product, on_delete=models.CASCADE)
     plu = models.IntegerField()
-    priority = models.IntegerField(unique=True)
+    my_order = models.PositiveIntegerField(
+        default=0,
+        blank=False,
+        null=False,
+    )
+
+    class Meta:
+        ordering = ['my_order']
 
     def __str__(self):
-        return f"{self.priority}: {self.product.name}"
+        return f"{self.product.name}"
     
 class peterechka_spb(models.Model):
     id = models.AutoField(primary_key=True)
     product = models.ForeignKey(product, on_delete=models.CASCADE)
     plu = models.IntegerField()
-    priority = models.IntegerField(unique=True)
+    my_order = models.PositiveIntegerField(
+        default=0,
+        blank=False,
+        null=False,
+    )
+
+    class Meta:
+        ordering = ['my_order']
 
     def __str__(self):
-        return f"{self.priority}: {self.product.name}"
+        return f"{self.product.name}"
     
 class briz_spb(models.Model):
     id = models.AutoField(primary_key=True)
     product = models.ForeignKey(product, on_delete=models.CASCADE)
     plu = models.IntegerField()
-    priority = models.IntegerField(unique=True)
+    my_order = models.PositiveIntegerField(
+        default=0,
+        blank=False,
+        null=False,
+    )
+
+    class Meta:
+        ordering = ['my_order']
 
     def __str__(self):
         return f"{self.product.name}"
@@ -78,7 +99,14 @@ class vkuster_spb(models.Model):
     id = models.AutoField(primary_key=True)
     product = models.ForeignKey(product, on_delete=models.CASCADE)
     plu = models.IntegerField()
-    priority = models.IntegerField(unique=True)
+    my_order = models.PositiveIntegerField(
+        default=0,
+        blank=False,
+        null=False,
+    )
+
+    class Meta:
+        ordering = ['my_order']
 
     def __str__(self):
         return f"{self.product.name}"
@@ -87,7 +115,14 @@ class plovdiv_spb(models.Model):
     id = models.AutoField(primary_key=True)
     product = models.ForeignKey(product, on_delete=models.CASCADE)
     plu = models.IntegerField()
-    priority = models.IntegerField(unique=True)
+    my_order = models.PositiveIntegerField(
+        default=0,
+        blank=False,
+        null=False,
+    )
+
+    class Meta:
+        ordering = ['my_order']
 
     def __str__(self):
         return f"{self.product.name}"
@@ -96,7 +131,14 @@ class rosneft_spb(models.Model):
     id = models.AutoField(primary_key=True)
     product = models.ForeignKey(product, on_delete=models.CASCADE)
     plu = models.IntegerField()
-    priority = models.IntegerField(unique=True)
+    my_order = models.PositiveIntegerField(
+        default=0,
+        blank=False,
+        null=False,
+    )
+
+    class Meta:
+        ordering = ['my_order']
 
     def __str__(self):
         return f"{self.product.name}"
@@ -105,7 +147,14 @@ class dixy_spb(models.Model):
     id = models.AutoField(primary_key=True)
     product = models.ForeignKey(product, on_delete=models.CASCADE)
     plu = models.IntegerField()
-    priority = models.IntegerField(unique=True)
+    my_order = models.PositiveIntegerField(
+        default=0,
+        blank=False,
+        null=False,
+    )
+
+    class Meta:
+        ordering = ['my_order']
 
     def __str__(self):
         return f"{self.product.name}"
@@ -114,7 +163,14 @@ class prisma_spb(models.Model):
     id = models.AutoField(primary_key=True)
     product = models.ForeignKey(product, on_delete=models.CASCADE)
     plu = models.IntegerField()
-    priority = models.IntegerField(unique=True)
+    my_order = models.PositiveIntegerField(
+        default=0,
+        blank=False,
+        null=False,
+    )
+
+    class Meta:
+        ordering = ['my_order']
 
     def __str__(self):
         return f"{self.product.name}"
@@ -123,7 +179,14 @@ class vernyi_spb(models.Model):
     id = models.AutoField(primary_key=True)
     product = models.ForeignKey(product, on_delete=models.CASCADE)
     plu = models.IntegerField()
-    priority = models.IntegerField(unique=True)
+    my_order = models.PositiveIntegerField(
+        default=0,
+        blank=False,
+        null=False,
+    )
+
+    class Meta:
+        ordering = ['my_order']
 
     def __str__(self):
         return f"{self.product.name}"
@@ -132,7 +195,14 @@ class magnit_spb(models.Model):
     id = models.AutoField(primary_key=True)
     product = models.ForeignKey(product, on_delete=models.CASCADE)
     plu = models.IntegerField()
-    priority = models.IntegerField(unique=True)
+    my_order = models.PositiveIntegerField(
+        default=0,
+        blank=False,
+        null=False,
+    )
+
+    class Meta:
+        ordering = ['my_order']
 
     def __str__(self):
         return f"{self.product.name}"
@@ -141,7 +211,14 @@ class lenta_spb(models.Model):
     id = models.AutoField(primary_key=True)
     product = models.ForeignKey(product, on_delete=models.CASCADE)
     plu = models.IntegerField()
-    priority = models.IntegerField(unique=True)
+    my_order = models.PositiveIntegerField(
+        default=0,
+        blank=False,
+        null=False,
+    )
+
+    class Meta:
+        ordering = ['my_order']
 
     def __str__(self):
         return f"{self.product.name}"
@@ -150,7 +227,14 @@ class auchan_spb(models.Model):
     id = models.AutoField(primary_key=True)
     product = models.ForeignKey(product, on_delete=models.CASCADE)
     plu = models.IntegerField()
-    priority = models.IntegerField(unique=True)
+    my_order = models.PositiveIntegerField(
+        default=0,
+        blank=False,
+        null=False,
+    )
+
+    class Meta:
+        ordering = ['my_order']
 
     def __str__(self):
         return f"{self.product.name}"
@@ -159,7 +243,14 @@ class ok_spb(models.Model):
     id = models.AutoField(primary_key=True)
     product = models.ForeignKey(product, on_delete=models.CASCADE)
     plu = models.IntegerField()
-    priority = models.IntegerField(unique=True)
+    my_order = models.PositiveIntegerField(
+        default=0,
+        blank=False,
+        null=False,
+    )
+
+    class Meta:
+        ordering = ['my_order']
 
     def __str__(self):
         return f"{self.product.name}"

@@ -1,21 +1,94 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Hello page</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-        {% for product in products %}
-        <h1>Name: {{product.name}}</h1>
+{% extends "cards/layout.html" %}
+
+{% block body %}
+
+
+<style media="screen">
+    .card {
+      border: 0px solid rgba(0,0,0,.125);
+      border-radius: 2.25rem;
+    }
+
+    .card-img-top{
+      height: 140px;
+    }
+
+    .jumbotron .container {
+        padding-top: 0rem;
+    }
+</style>
+<header class="sticky-top">
+  <div class="navbar sticky-top navbar-dark bg-dark shadow-sm">
+    <div class="container d-flex justify-content-between">
+      <a href="#" class="navbar-brand d-flex align-items-center">
+        <strong style="color:black;">Магазины Санкт-Петербург</strong>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main role="main">
+
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Дискаунтеры, Супермаркеты</h1>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+        {% for shop in shops %}
+          <div class="col-md-4">
+            <a href="/{{shop.url}}">
+              <div class="card mb-4 shadow-sm">
+                <img class="card-img-top" data-src="5chka.png" alt="Thumbnail [100%x225]" style="width: 100%; display: block; padding:20px; object-fit:contain;" src="{{shop.image}}" data-holder-rendered="true">
+              </div>
+            </a>
+          </div>
         {% endfor %}
-        <script src="" async defer></script>
-    </body>
-</html>
+      </div>
+    </div>
+  </div>
+
+  
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Гипермаркеты </h1>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-4">
+          <a href="./locations/lenta">
+            <div class="card mb-4 shadow-sm">
+              <img class="card-img-top" data-src="./assets/location_images/Lenta.png" alt="Thumbnail [100%x225]" style="width: 100%; display: block; padding:20px; object-fit:contain;" src="./assets/location_images/Lenta.png" data-holder-rendered="true">
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <a href="./locations/auchan">
+            <div class="card mb-4 shadow-sm">
+              <img class="card-img-top" data-src="./assets/location_images/Auchan.png" alt="Thumbnail [100%x225]" style="width: 100%; display: block; padding:20px; object-fit:contain;" src="./assets/location_images/Auchan.png" data-holder-rendered="true">
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <a href="./locations/ok">
+          <div class="card mb-4 shadow-sm">
+            <img class="card-img-top" data-src="./assets/location_images/ok.png" alt="Thumbnail [100%x225]" style="width: 100%; display: block; padding:20px; object-fit:contain;" src="./assets/location_images/ok.png" data-holder-rendered="true">
+          </div>
+        </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</main>
+
+{% endblock body %}

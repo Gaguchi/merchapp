@@ -6,7 +6,8 @@ from .models import *
 
 def index(request):
     return render(request, "cards/index.html", {
-        "products": product.objects.all()
+        "shops": shops_SPB.objects.all(),
+        "supermarkets": supermarkets_SPB.objects.all()
     })
 
 def perekspb(request):
