@@ -39,7 +39,7 @@ class brand(models.Model):
 class product(models.Model):
     id = models.AutoField(primary_key=True)
     brand = models.ForeignKey(brand, on_delete=models.CASCADE)
-    name = models.CharField(max_length=64, blank=False)
+    name = models.CharField(max_length=64, blank=False, unique=True)
     image = models.ImageField(upload_to='product_images')
     box = models.IntegerField()
     barcode = models.ImageField(upload_to='product_barcodes')
@@ -61,7 +61,7 @@ class perek_spb(models.Model):
         ordering = ['my_order']
 
     def __str__(self):
-        return f"{self.product.name}"
+        return f"{self.product.brand.company.name}: {self.product.name}"
     
 class peterechka_spb(models.Model):
     id = models.AutoField(primary_key=True)
@@ -77,7 +77,7 @@ class peterechka_spb(models.Model):
         ordering = ['my_order']
 
     def __str__(self):
-        return f"{self.product.name}"
+        return f"{self.product.brand.company.name}: {self.product.name}"
     
 class briz_spb(models.Model):
     id = models.AutoField(primary_key=True)
@@ -93,7 +93,7 @@ class briz_spb(models.Model):
         ordering = ['my_order']
 
     def __str__(self):
-        return f"{self.product.name}"
+        return f"{self.product.brand.company.name}: {self.product.name}"
     
 class vkuster_spb(models.Model):
     id = models.AutoField(primary_key=True)
@@ -109,7 +109,7 @@ class vkuster_spb(models.Model):
         ordering = ['my_order']
 
     def __str__(self):
-        return f"{self.product.name}"
+        return f"{self.product.brand.company.name}: {self.product.name}"
     
 class plovdiv_spb(models.Model):
     id = models.AutoField(primary_key=True)
@@ -125,7 +125,7 @@ class plovdiv_spb(models.Model):
         ordering = ['my_order']
 
     def __str__(self):
-        return f"{self.product.name}"
+        return f"{self.product.brand.company.name}: {self.product.name}"
     
 class rosneft_spb(models.Model):
     id = models.AutoField(primary_key=True)
@@ -141,7 +141,7 @@ class rosneft_spb(models.Model):
         ordering = ['my_order']
 
     def __str__(self):
-        return f"{self.product.name}"
+        return f"{self.product.brand.company.name}: {self.product.name}"
     
 class dixy_spb(models.Model):
     id = models.AutoField(primary_key=True)
@@ -157,7 +157,7 @@ class dixy_spb(models.Model):
         ordering = ['my_order']
 
     def __str__(self):
-        return f"{self.product.name}"
+        return f"{self.product.brand.company.name}: {self.product.name}"
     
 class prisma_spb(models.Model):
     id = models.AutoField(primary_key=True)
@@ -173,7 +173,7 @@ class prisma_spb(models.Model):
         ordering = ['my_order']
 
     def __str__(self):
-        return f"{self.product.name}"
+        return f"{self.product.brand.company.name}: {self.product.name}"
     
 class vernyi_spb(models.Model):
     id = models.AutoField(primary_key=True)
@@ -189,7 +189,7 @@ class vernyi_spb(models.Model):
         ordering = ['my_order']
 
     def __str__(self):
-        return f"{self.product.name}"
+        return f"{self.product.brand.company.name}: {self.product.name}"
     
 class magnit_spb(models.Model):
     id = models.AutoField(primary_key=True)
@@ -205,7 +205,7 @@ class magnit_spb(models.Model):
         ordering = ['my_order']
 
     def __str__(self):
-        return f"{self.product.name}"
+        return f"{self.product.brand.company.name}: {self.product.name}"
     
 class lenta_spb(models.Model):
     id = models.AutoField(primary_key=True)
@@ -221,7 +221,7 @@ class lenta_spb(models.Model):
         ordering = ['my_order']
 
     def __str__(self):
-        return f"{self.product.name}"
+        return f"{self.product.brand.company.name}: {self.product.name}"
     
 class auchan_spb(models.Model):
     id = models.AutoField(primary_key=True)
@@ -237,7 +237,7 @@ class auchan_spb(models.Model):
         ordering = ['my_order']
 
     def __str__(self):
-        return f"{self.product.name}"
+        return f"{self.product.brand.company.name}: {self.product.name}"
     
 class ok_spb(models.Model):
     id = models.AutoField(primary_key=True)
@@ -253,4 +253,4 @@ class ok_spb(models.Model):
         ordering = ['my_order']
 
     def __str__(self):
-        return f"{self.product.name}"
+        return f"{self.product.brand.company.name}: {self.product.name}"
