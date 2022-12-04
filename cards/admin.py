@@ -1,10 +1,24 @@
 from django.contrib import admin
 from adminsortable2.admin import SortableAdminMixin
+from django.utils.html import format_html
 
 from .models import *
 
 class ProductOrder(admin.ModelAdmin):
-    ordering = ['brand']
+    readonly_fields = ['img_preview']
+    
+    def image_tag(self, obj):
+        return format_html('<img src="{}" style="max-width:200px; max-height:200px"/>'.format(obj.image.url))
+
+    list_display = ['name','image_tag',]
+
+
+class ShopOrder(admin.ModelAdmin):
+    def image_tag(self, obj):
+        return format_html('<img src="{}" style="max-width:200px; max-height:200px"/>'.format(obj.product.image.url))
+
+    list_display = ['product','image_tag',]
+
 
 # Register your models here.
 
@@ -16,7 +30,12 @@ admin.site.register(supermarkets_SPB)
 
 @admin.register(perek_spb)
 class SortableBookAdmin(SortableAdminMixin, admin.ModelAdmin):
+    def image_tag(self, obj):
+        return format_html('<img src="{}" style="max-width:200px; max-height:200px"/>'.format(obj.product.image.url))
+
+    list_display = ['product','image_tag',]
     pass
+
 @admin.register(peterechka_spb)
 class SortableBookAdmin(SortableAdminMixin, admin.ModelAdmin):
     pass

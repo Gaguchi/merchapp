@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import date
+from django.utils.html import mark_safe
 
 # Create your models here.
 
@@ -41,6 +42,9 @@ class product(models.Model):
     brand = models.ForeignKey(brand, on_delete=models.CASCADE)
     name = models.CharField(max_length=64, blank=False, unique=True)
     image = models.ImageField(upload_to='product_images')
+    def img_preview(self): #new
+        return mark_safe(f'<img scr = "{self.image.url}" witdh = "300"/>')
+
     box = models.IntegerField()
     barcode = models.ImageField(upload_to='product_barcodes')
 
