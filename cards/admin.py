@@ -5,6 +5,7 @@ from django.utils.html import format_html
 from .models import *
 
 class ProductOrder(admin.ModelAdmin):
+    ordering = ['brand']
     readonly_fields = ['img_preview']
     
     def image_tag(self, obj):
