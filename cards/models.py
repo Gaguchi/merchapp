@@ -4,6 +4,13 @@ from django.utils.html import mark_safe
 
 # Create your models here.
 
+
+class city(models.Model):
+    name = models.CharField(max_length=64)
+
+    def __str__(self):
+        return f"{self.name}"
+
 class shops_SPB(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=64)

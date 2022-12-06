@@ -23,6 +23,7 @@ class ShopOrder(admin.ModelAdmin):
 
 # Register your models here.
 
+admin.site.register(city)
 admin.site.register(product, ProductOrder)
 admin.site.register(company)
 admin.site.register(brand)
