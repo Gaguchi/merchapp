@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','merchapp-production.up.railway.app']
 
+CSRF_TRUSTED_ORIGINS = ['merchapp-production.up.railway.app']
 
 # Application definition
 
