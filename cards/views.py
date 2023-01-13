@@ -17,6 +17,7 @@ def perekspb(request):
 
 def peterechkaspb(request):
     return render(request, "cards/peterechka_spb.html", {
+        "shops": shops_SPB.objects.all(),
         "names": peterechka_spb.objects.all()
     })
 
