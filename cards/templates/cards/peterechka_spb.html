@@ -6,9 +6,22 @@
 <!--[if lt IE 7]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
+
+<section class="jumbotron text-center">
+  <div class="container">
+    {% for shop in shops%}
+    {% if shop.id == 2 %}
+    <img src="{{shop.image}}" alt="" id="shop-logo">
+    {%else%}
+    {%endif%}
+    {%endfor%}
+  </div>
+</section>
 <section>
-    <div class="container sticky-top" style="pointer-events: none; background-color: #ffffff00; z-index: 10;">
-      <div class="row" style="padding-top: 5px; padding-bottom: 5px;"><img src="../../assets/site_assets/kul_logo.png" alt="" style="max-width: 110px; padding: 12px; max-height: 50px;"><span id="code" style="color:#5cba2c">[7000059242]</span></div>
+    <div class="container sticky-top" id="shop-logo-image">
+      <div class="row">
+        <img src=""><span id="code" style="color:#5cba2c">[7000059242]</span>
+      </div>
     </div>
     <!--<div class="container sticky-top" style="pointer-events: none; background-color: #ffffff;">
       <img src="../../assets/site_assets/ph_logo.png" alt="" style="max-width: 200px; padding: 19px;">
