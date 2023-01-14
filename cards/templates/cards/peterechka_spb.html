@@ -1,5 +1,5 @@
 {% extends "cards/layout.html" %}
-
+{% load static %}
 {% block body %}
 
 <h1>peterechka SPB</h1>
@@ -18,9 +18,9 @@
   </div>
 </section>
 <section>
-    <div class="container sticky-top" id="shop-logo-image">
+    <div class="container sticky-top brand-logo-field">
       <div class="row">
-        <img src=""><span id="code" style="color:#5cba2c">[7000059242]</span>
+        <img class="brand-logo-image" src="{% static 'cards/ice_logo.png'%}"><span id="code" style="color:#ff255c">[7000059242]</span>
       </div>
     </div>
     <!--<div class="container sticky-top" style="pointer-events: none; background-color: #ffffff;">
