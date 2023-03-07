@@ -26,13 +26,7 @@ SECRET_KEY = 'django-insecure-1n+1uw2xk+)55d=(#$5p6ce8liz1+em!r&$*5))v$tm-w$lho2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','merchapp-production.up.railway.app']
-
-if not DEBUG:
-    CSRF_TRUSTED_ORIGINS = ['https://merchapp-production.up.railway.app']
-
-if DEBUG:
-    CSRF_TRUSTED_ORIGINS = ['https://merchapp-production.up.railway.app']
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -128,7 +122,7 @@ STATIC_ROOT = (os.path.join(SITE_ROOT, 'static/'))
 STATICFILES_DIRS = (
   os.path.join(SITE_ROOT, '/cards/static/'),
 )
-STATIC_URL =   'static/'
+STATIC_URL =   '/static/'
 
 
 MEDIA_ROOT = ''
